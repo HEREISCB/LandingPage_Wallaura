@@ -2,8 +2,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  ChevronDown,
-  ChevronRight,
   Menu,
   X,
   Gift,
@@ -12,38 +10,13 @@ import {
   Tag, 
   InstagramIcon
 } from 'lucide-react'
-import horiimage from '../components/hori.png'
-import ahoriimage from '../.next/static/media/hori.f1c3b3c0.png'
+
 import Image from 'next/image'
 
 
 
 export default function HomePage() {
-  const [activeCategory, setActiveCategory] = useState('Wall Plates')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const categories = [
-    { name: 'Wall Plates', image: '../.next/static/media/wallplates' },
-    { name: 'Fridge Magnets', image: '/placeholder.svg?height=400&width=600' },
-    { name: 'Dot Mandala Keychains', image: '/placeholder.svg?height=400&width=600' },
-    { name: 'Diwali Collection', image: '/placeholder.svg?height=400&width=600' },
-  ]
-
-  const TabContent = () => (
-    
-    
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-          className="mt-6"
-        >
-          
-        </motion.div>
-   
-  
-  );
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -62,7 +35,7 @@ export default function HomePage() {
   return (
     
     <div className="bg-white">
-      {/* Mobile Navigation */}
+    
       <nav className="lg:hidden">
         <div className="flex items-center justify-between p-4 bg-white shadow-md">
           <h1 className="text-2xl font-bold">Wall Aura</h1>
@@ -100,7 +73,7 @@ export default function HomePage() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
+     
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <video
           autoPlay
@@ -141,8 +114,9 @@ export default function HomePage() {
         <p className="text-gray-600">₹250 - ₹500/-</p> 
       </div>
     </motion.div>
-    <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden"> 
-    <img src="https://i.ibb.co/x8FXzhR/Photoroom-20241015-165850.png" alt="Diwali Collection" className="w-full h-48 object-cover rounded-lg  " />
+    <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden">
+    <Image src="https://i.ibb.co/x8FXzhR/Photoroom-20241015-165850.png" width={500} height={500} alt='asd'
+className="w-full h-48 object-cover rounded-lg  " />
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">Fridge Magnets</h3>
         <p className="text-gray-600">Explore our unique fridge magnets.</p>
@@ -166,55 +140,6 @@ export default function HomePage() {
     </motion.div>
   </div>
   </section>
-
-      {/* Product Categories */}
-      {/* <section className="py-12 px-4 md:px-8 lg:px-16">
-        <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl font-bold text-center mb-8">Our Products</motion.h2>
-        <motion.div variants={staggerChildren} initial="initial" animate="animate" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
-            <motion.div
-              key={category.name}
-              variants={fadeInUp}
-              className="group cursor-pointer"
-              onClick={() => setActiveCategory(category.name)}
-            >
-              <div className="relative overflow-hidden rounded-lg mb-4">
-                <motion.img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-48 sm:h-64 object-cover"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                  <span className="text-white text-lg font-semibold">View {category.name}</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
-              <p className="text-gray-600 flex items-center">
-                {activeCategory === category.name ? (
-                  <ChevronDown className="inline-block w-5 h-5 mr-1" />
-                ) : (
-                  <ChevronRight className="inline-block w-5 h-5 mr-1" />
-                )}
-                {activeCategory === category.name ? 'Hide details' : 'See details'}
-              </p>
-              <AnimatePresence>
-                {activeCategory === category.name && (
-                  <motion.p
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="mt-2 text-gray-600"
-                  >
-                    Discover our beautiful {category.name.toLowerCase()}. Perfect for adding a touch of elegance to your home.
-                  </motion.p>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section> */}
       <section className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -255,7 +180,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Key Features */}
+      
       <section className="bg-gray-100 py-12 px-4 md:px-8 lg:px-16">
         <motion.h2 {...fadeInUp} className="text-3xl sm:text-4xl font-bold text-center mb-8">Why Choose Wall Aura</motion.h2>
         <motion.div variants={staggerChildren} initial="initial" animate="animate" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -290,7 +215,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* About the Business */}
+     
       <section className="py-12 px-4 md:px-8 lg:px-16">
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Story</h2>
@@ -308,36 +233,25 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Call-to-Action */}
+     
       <section className="bg-gray-900 text-white py-12 px-4 md:px-8 lg:px-16">
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Create Your Perfect Piece</h2>
           <p className="text-lg sm:text-xl mb-8">
-            Whether it's a custom wall plate, a personalized keychain, or a unique fridge magnet, 
-            we're here to bring your vision to life.
+          Whether it&apos;s a custom wall plate, a personalized keychain, or a unique fridge magnet, 
+          we&apos;re here to bring your vision to life.
           </p>
-          
-          
-          
-          
-          <motion.button
-          
+          <motion.button        
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 text-sm sm:text-base"
-          >
-            
+          >        
             <a href="https://www.instagram.com/wall__aura/">
             Start Customizing
             </a>
           </motion.button>
         </motion.div>
       </section>
-
-      {/* Instagram QR Code */}
-  
-
-      {/* Footer */}
       <footer className="bg-gray-100 py-8 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -368,7 +282,7 @@ export default function HomePage() {
                   <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                 </svg>
               </motion.a>
-              {/* Instagram Icon */}
+
               <motion.a href="https://www.instagram.com/wall__aura/" className="text-gray-600 hover:text-gray-900" whileHover={{ scale: 1.2 }}>
                 <span className="sr-only">Instagram</span>
                 {/* Use the InstagramIcon if available, else fallback to a custom SVG */}
@@ -380,7 +294,6 @@ export default function HomePage() {
                   </svg>
                 )}
               </motion.a>
-              {/* Twitter Icon */}
               <motion.a href="#" className="text-gray-600 hover:text-gray-900" whileHover={{ scale: 1.2 }}>
                 <span className="sr-only">Twitter</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -391,7 +304,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="mt-8 text-center text-gray-600">
-          <p>&copy; 2024 Wallaura. All rights reserved. All trademarks and copyrights are the property of their WallAura & CB-studio.</p>
+          <p>© 2024 Wallaura. All rights reserved. All trademarks and copyrights are the property of their WallAura & CB-studio.</p>
         </div>
       </footer>
     </div>
