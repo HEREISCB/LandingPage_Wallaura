@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 
 import Image from 'next/image'
-
+import Link from 'next/link'
 
 
 export default function HomePage() {
@@ -104,8 +104,12 @@ export default function HomePage() {
 
 
     <section className="py-12 px-4 md:px-8 lg:px-16"> 
-  <h2 className="text-3xl font-bold mb-6 text-center">Our Products</h2>
+  <h2 className="text-3xl font-bold mb-1 text-center">Our Products</h2>
+  <h2 className="text-2m font-bold mb-6 text-center">Click on products to open our products gallery</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <Link href="/Gallery">
+    
+    
     <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden">
       <Image src="https://i.ibb.co/3hvG6mh/Photoroom-20241015-153022.png" width={500} height={500} alt='asd' className='rounded-lg' />
         <div className="p-4">
@@ -114,6 +118,8 @@ export default function HomePage() {
         <p className="text-gray-600">₹250 - ₹500/-</p> 
       </div>
     </motion.div>
+    
+    
     <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden">
     <Image src="https://i.ibb.co/x8FXzhR/Photoroom-20241015-165850.png" width={500} height={500} alt='asd'
 className="w-full h-48 object-cover rounded-lg  " />
@@ -123,6 +129,8 @@ className="w-full h-48 object-cover rounded-lg  " />
         <p className="text-gray-600">₹80 - ₹150/-</p> 
       </div>
     </motion.div>
+    </Link>
+    <Link href="/Gallery">
     <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden">
     <Image src="https://i.ibb.co/NxCK8gd/wall-aura-15-10-2024-0004.jpg" width={500} height={500} alt='asd' className='rounded-lg' />
       <div className="p-4">
@@ -131,6 +139,8 @@ className="w-full h-48 object-cover rounded-lg  " />
         <p className="text-gray-600">₹50 - ₹80/-</p> 
       </div>
     </motion.div>
+    </Link>
+    <Link href="/Gallery">
     <motion.div whileHover={{ scale: 1.05 }} className="bg-white rounded-lg shadow-md overflow-hidden">
     <Image src="https://i.ibb.co/cgXkxzD/Photoroom-20241015-170757.png" width={500} height={500} alt='asd' className='rounded-lg' />
       <div className="p-4">
@@ -138,6 +148,8 @@ className="w-full h-48 object-cover rounded-lg  " />
         <p className="text-gray-600">Celebrate with our special Diwali collection.</p>
       </div>
     </motion.div>
+    </Link>
+  
   </div>
   </section>
       <section className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
